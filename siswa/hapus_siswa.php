@@ -1,5 +1,9 @@
 <?php
 include("../koneksi.php");
+$sql1="INSERT INTO rekapan
+	  SELECT *
+	  FROM driver where id='$_GET[id]'";
+$query1=mysqli_query($mysqli,$sql1);
 $sql="delete from driver where id='$_GET[id]'";
 $query=mysqli_query($mysqli,$sql);
 if ($query) {

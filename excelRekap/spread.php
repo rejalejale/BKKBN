@@ -5,7 +5,7 @@ header("Content-Disposition: attachment; filename=Rekapan Driver" . date('Y-m-d'
 
 $mysqli=mysqli_connect("localhost","root","","db_siswa");
 
-$sql = "SELECT * FROM driver";
+$sql = "SELECT * FROM rekapan";
 if ($result = $mysqli->query($sql)) {
     if ($result->num_rows > 0) {
         echo "<table border='1'>";

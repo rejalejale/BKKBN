@@ -14,14 +14,36 @@ if (!isset($_SESSION['username'])) {
       <h1>
         JADWAL DRIVER BKKBN
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="excelRekap/spread.php?filename=RekapDriver.xlsx"><button type="button" class="btn btn-success" name=""> <i class="fa fa-folder-open"></i> DOWNLOAD LAPORAN</button></a></li>
-      </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
       <div class="row">
+      <?php
+include "koneksi.php";
+$worker=mysqli_query($mysqli,"select nama from listdriver ORDER BY nama ASC");
+$no=1;
+while($kotak=mysqli_fetch_array($worker)){
+  $name=$kotak['nama'];
+  $hitung=mysqli_query($mysqli,"select * from driver where nama='$name'");
+  $jumlah=mysqli_num_rows($hitung);
+?>
+
+
+                <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h><?php echo $kotak['nama']?></h3>
+
+              <p><?php echo $jumlah?></p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
+            </div>
+          </div>
+        </div>
+<?php } ?>
         <div class="col-xs-12">
                     
           <!-- /.box -->
@@ -32,11 +54,12 @@ if (!isset($_SESSION['username'])) {
               <input type="button" value="Tambah" class="btn btn-primary" name="">
               </a>
             </div>
-            <!-- /.box-header -->
+            <!-- /.box-header --> 
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="example2" class="table table-bordered table-striped">
                 <thead>
                 <tr>
+                  
                   <th>No</th>
                   <th>Nama</th>
                   <th>Kendaraan</th>
@@ -85,3 +108,7 @@ while($row=mysqli_fetch_array($hasil)){
     </section>
     <!-- /.content -->
   </div>
+
+  <script>
+    fuction myFunction 
+  </script>

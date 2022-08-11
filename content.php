@@ -10,6 +10,9 @@
         elseif ($_GET['hal']=='edit_siswa') {
           include "siswa/edit_siswa.php";
         }
+        elseif ($_GET['hal']=='riwayat') {
+          include "siswa/riwayat.php";
+        }
         elseif ($_GET['hal']=='driver') {
           include "driver/driver.php";
         }

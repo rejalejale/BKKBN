@@ -30,6 +30,11 @@ if (!isset($_SESSION['username'])) {
           </a>
         </li>
         <li>
+          <a href="index.php?hal=riwayat">
+          <i class="fa fa-history"></i><span>Riwayat</span>
+          </a>
+        </li>
+        <li>
           <a onclick="return confirm('Anda Yakin...?')" href="logout.php">
             <i class="fa fa-power-off"></i> <span>LOGOUT</span>
           </a>
